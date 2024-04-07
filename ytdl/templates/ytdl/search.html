@@ -1,0 +1,63 @@
+{% load static %}
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="colorlib.com">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500" rel="stylesheet" />
+    <link href="{% static "css/main.css" %}" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="s002">
+      <form action="" method="POST"enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="s003">
+          <div class="progress2" id="progress2">
+            <div class="color"></div>
+            <p class="l">Loading</p>
+          </div>
+          <img src="{% static "images/youtube-logo-youtube-icon-transparent-free-png.webp" %}" width="150em" height="150em" style="margin-left: -2.5em;" alt="">
+          <fieldset>
+            <legend>SEARCH YouTube Link</legend>
+          </fieldset>
+          <div class="inner-form">
+            <div class="input-field first-wrap">
+              <div class="icon-wrap">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                  <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path>
+                </svg>
+              </div>
+              <input id="search" name="search" type="text" placeholder="What are you want to looking?" />
+            </div>
+            <div class="input-field fifth-wrap">
+              <a href=""  onclick="loader()">
+                <button class="btn-search" onclick="loader()" type="submit">SEARCH</button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <script src="{% static "js/extention/choices.js" %}"></script>
+    <script src="{% static "js/extention/flatpickr.js" %}"></script>
+    <script>
+      flatpickr(".datepicker",
+      {});
+
+    </script>
+    <script>
+      const choices = new Choices('[data-trigger]',
+      {
+        searchEnabled: false,
+        itemSelectText: '',
+      });
+
+    </script>
+    <script>
+    function loader(){
+    document.getElementById("progress2").style.display="block";
+    }
+    </script>
+  </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
